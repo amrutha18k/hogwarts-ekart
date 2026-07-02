@@ -1,0 +1,10 @@
+.footer-transition{
+    height:120px;
+    background:linear-gradient(
+        to bottom,
+        #1E1633,
+        #161220,
+        #111111
+    );
+    position:relative;
+}

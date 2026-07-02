@@ -2,13 +2,17 @@
 import {Navbar} from './navbar.jsx';
 import {Hero} from './hero.jsx';
 import {About} from './about.jsx';
+import {Footer} from './footer.jsx';
+import './App.css';
 
 function App(){
     return(
       <>
         <Navbar />
         <Hero />
-        <About />     
+        <About />  
+        <div className="footer-transition"></div>
+        <Footer />   
       </>
     ); 
     
