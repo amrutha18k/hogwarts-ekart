@@ -1,0 +1,38 @@
+.about-cnt{
+    background: #18122b;
+    color: #f5e6c8;
+    padding: 100px 10%;
+}
+.about-cnt h1{
+    color: gold;
+    font-family: "Outfit", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    margin: 30px;
+}
+.about-cnt h3{
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    text-align: center;
+    margin-bottom:50px;
+}
+.about-cnt h2{
+    font-family: "Outfit", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight:200;
+    line-height: 1.8;
+}
+.divider-symbol{
+    color: gold;
+    font-size: 2rem;
+    text-align: center;
+    margin: 50px 0;
+}
+.ending{
+    text-align: center;
+    font-style: italic;
+    margin-top: 80px;
+    color: #F5E6C8;
+}

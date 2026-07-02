@@ -3,7 +3,7 @@ import './hero.css';
 
 function HeroButtons(){
     return (
-        <div class="hero-buttons">
+        <div className="hero-buttons">
             <button className="hero-button">Explore Diagon Alley</button>
             <button className="hero-button">Shop Now</button>
         </div>
