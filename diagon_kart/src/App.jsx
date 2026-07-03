@@ -1,19 +1,14 @@
-//Home page
-import {Navbar} from './navbar.jsx';
-import {Hero} from './hero.jsx';
-import {About} from './about.jsx';
-import {Footer} from './footer.jsx';
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/home.jsx';
 import './App.css';
+import Shop from "./pages/shop";
 
 function App(){
     return(
-      <>
-        <Navbar />
-        <Hero />
-        <About />  
-        <div className="footer-transition"></div>
-        <Footer />   
-      </>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
     ); 
     
 }

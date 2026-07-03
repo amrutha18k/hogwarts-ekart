@@ -1,7 +1,7 @@
 //navbar
 import './navbar.css';
 
-function SearchBar(){
+export function SearchBar(){
     return (
         <div className="search-bar">
             <input className="search-input"type="text" placeholder="Search magical items"></input>
