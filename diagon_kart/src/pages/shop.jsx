@@ -1,5 +1,6 @@
 import {Navbar} from '../navbar.jsx';
 import {Footer} from '../footer.jsx';
+import {useState} from "react";
 import '../App.css';
 import '../navbar.css';
 import '../footer.css';
@@ -8,7 +9,10 @@ import '../shop.css'
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import {products} from "../data/products.js"
 
+
+
 const categories = [
+    "All",
     "New Arrivals",
     "Best Sellers",
     "Weasley's WW",
@@ -21,11 +25,19 @@ const categories = [
     "Limited"
 ];
 
-function CatogoriePane(){
+function CatogoriePane({setSelectedCat,selectedCat}){
     return(
         <div className="catogories-cnt">
             {categories.map(category => (
-                <button key={category}>
+                <button key={category} className={
+                    selectedCat===category
+                        ?"cat-active"
+                        :"cat-btn"
+                }onClick={
+                    ()=>{
+                        setSelectedCat(category);
+                    }
+                }>
                     {category}
                 </button>
             ))}
@@ -81,10 +93,30 @@ function BuyButtons(){
     );
 }
 
-function ProductCart(){
+function ProductCart({selectedCat}){
+    let filteredProducts
+    if(selectedCat==="All"){
+        filteredProducts=products;
+    }else{
+        filteredProducts=products.filter((product)=>{
+            return product.category.some(cat =>
+                cat.toLowerCase() === selectedCat.toLowerCase()
+            )
+        });
+    }
+
+    if(filteredProducts.length===0){
+        return(
+            <div className='no-prod'>
+                <h1>Oops! No products available in this category right now! Check after few days! :)</h1>
+            </div>
+        );
+    }
+
+    
     return(
     <>
-        {products.map((product)=>{
+        {filteredProducts.map((product)=>{
             return (
                 <div className="product-cnt" key={product.id}>
                     <div className="product-img-cnt">
@@ -103,13 +135,15 @@ function ProductCart(){
 }
 
 function Shop(){
+     let [selectedCat,setSelectedCat]=useState("All");
+
     return(
         <>
             <Navbar /> 
             <div className="shop-cnt">
-                <CatogoriePane />
+                <CatogoriePane setSelectedCat={setSelectedCat} selectedCat={selectedCat}/>
                 <div className="products-cnt">
-                    <ProductCart />
+                    <ProductCart selectedCat={selectedCat}/>
                 </div>
             </div>
             <Footer />        

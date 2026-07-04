@@ -26,7 +26,7 @@
     align-items: center;
     margin-bottom: 20px;
 }
-.catogories-cnt button{
+.cat-btn{
     border:0;
     background-color: rgb(40, 31, 49);
     padding:10px;
@@ -36,9 +36,19 @@
     color:gold;
     transition: background-color 0.3s ease;
 }
-.catogories-cnt button:hover{
+.cat-btn:hover{
     background-color: rgb(200, 194, 160);
     color:black;
+}
+.cat-active{
+    border:0;
+    padding:10px;
+    border-radius: 10px;
+    font-family: "Outfit";
+    cursor: pointer;
+    background-color: rgb(200, 194, 160);
+    color:black;
+    transition: background-color 0.3s ease;
 }
 .rating-stars {
     color: #FFD700;
@@ -162,4 +172,14 @@
 .product-cnt{
     width: 100%;
     max-width: 300px;
+}
+
+.no-prod h1{
+    color: gold;
+    font-family: "Outfit";
+}
+.no-prod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

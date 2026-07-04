@@ -41,7 +41,7 @@ export const products=[
         price:"Rs.1000",
         description:"Premium Quality cotton Dress Robes for Slytherin.",
         rating:2.5,
-        category: ["school","travel","dress","dress robes","slytherin","uniform","slytherin uniform"]
+        category: ["school","Robes","travel","dress","dress robes","slytherin","uniform","slytherin uniform"]
     },{
         id:5,
         name:"Gryffindor Uniform",
@@ -49,7 +49,7 @@ export const products=[
         price:"Rs.800",
         description:"Premium Quality cotton Dress Robes for Gryffindor.",
         rating:4.5,
-        category: ["school","travel","dress","dress robes","gryffindor","uniform","gryffindor uniform"]
+        category: ["school","Robes","travel","dress","dress robes","gryffindor","uniform","gryffindor uniform"]
     },{
         id:6,
         name:"HufflePuff Robes",
@@ -57,7 +57,7 @@ export const products=[
         price:"Rs.900",
         description:"Premium Quality cotton Dress Robes for Hufflepuff.",
         rating:4,
-        category: ["school","travel","dress","dress robes","hufflepuff","uniform","hufflepuff uniform"]
+        category: ["school","Robes","travel","dress","dress robes","hufflepuff","uniform","hufflepuff uniform"]
     },{
         id:7,
         name:"Ravenclaw Robes",
@@ -65,7 +65,7 @@ export const products=[
         price:"Rs.600",
         description:"Premium Quality cotton Dress Robes for Ravenclaw",
         rating:3.5,
-        category: ["school","travel","dress","dress robes","hufflepuff","uniform","hufflepuff uniform"]
+        category: ["school","Robes","travel","dress","dress robes","hufflepuff","uniform","hufflepuff uniform"]
     },{
         id:8,
         name:"Nimbus 2000",
@@ -73,7 +73,7 @@ export const products=[
         price:"Rs.9000",
         description:"Super fast with a very sleek design, a new edition of brooms.",
         rating:5,
-        category: ["school","travel","quidditch","quiditch","broom","nimbus","nimbus 2000","quidditch game","harry potter"]
+        category: ["school","travel","Quidditch","Quiditch","broom","nimbus","nimbus 2000","quidditch game","harry potter"]
     },{
         id:9,
         name:"Firebolt",
@@ -81,7 +81,7 @@ export const products=[
         price:"Rs.20000",
         description:"Super fast and of premuim quality, a new edition of brooms.",
         rating:4.5,
-        category: ["school","travel","quidditch","quiditch","broom","nimbus","firebolt","fire","quidditch game","harry potter"]
+        category: ["school","travel","Quidditch","Quiditch","broom","nimbus","firebolt","fire","quidditch game","harry potter"]
     },{
         id:10,
         name:"Golden Snitch",
@@ -89,6 +89,6 @@ export const products=[
         price:"Rs.900",
         description:"A perfect replica of the beautiful snitch",
         rating:3,
-        category: ["school","travel","quidditch","quiditch","broom","nimbus","nimbus 2000","quidditch game","harry potter","golden","snitch"]
+        category: ["school","travel","Quidditch","Quiditch","broom","nimbus","nimbus 2000","quidditch game","harry potter","golden","snitch"]
     }
 ];

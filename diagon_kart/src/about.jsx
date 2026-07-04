@@ -3,7 +3,7 @@ import './about.css';
 
 export function About(){
     return(
-        <div className="about-cnt">
+        <div className="about-cnt"  id="about">
             <h1>Behind the Magic</h1>
             <h3>"Every project starts with an idea."</h3>
             <p className="divider-symbol">✦</p>

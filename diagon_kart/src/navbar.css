@@ -68,4 +68,11 @@
     flex-direction:column;
     gap:1px;
 }
+.nav-link {
+    text-decoration: none;
+    color: gold;
+}
 
+.nav-link:hover {
+    color: white; /* Hogwarts gold */
+}

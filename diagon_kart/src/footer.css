@@ -69,3 +69,11 @@
     font-style:italic;
     margin-top:12px;
 }
+.nav-link {
+    text-decoration: none;
+    color: gold;
+}
+
+.nav-link:hover {
+    color: white; /* Hogwarts gold */
+}

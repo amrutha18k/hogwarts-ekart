@@ -1,11 +1,14 @@
 //hero section
 import './hero.css';
+import { Link } from "react-router-dom";
 
 function HeroButtons(){
     return (
         <div className="hero-buttons">
             <button className="hero-button">Explore Diagon Alley</button>
-            <button className="hero-button">Shop Now</button>
+            <Link to="/shop">
+                <button className="hero-button">Shop Now</button>
+            </Link>
         </div>
     );
 }

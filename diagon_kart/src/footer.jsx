@@ -1,4 +1,6 @@
 import "./footer.css";
+import { HashLink } from "react-router-hash-link";
+
 
 export function Footer() {
     return (
@@ -11,9 +13,13 @@ export function Footer() {
 
             <div className="footer-links">
 
-                <a href="/">Home</a>
+                <span><HashLink smooth to="/" className="nav-link">
+                    Home
+                </HashLink></span>
                 <a href="/shop">Shop</a>
-                <a href="/about">About</a>
+                 <HashLink smooth to="/#about" className="nav-link">
+                    About
+                </HashLink>
 
                 <a
                     href="https://github.com/amrutha18k"

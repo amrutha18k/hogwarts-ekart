@@ -1,5 +1,7 @@
 //navbar
 import './navbar.css';
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export function SearchBar(){
     return (
@@ -24,10 +26,16 @@ function CartIcon(){
 export function Navbar(){
     return (
         <div className="navbar">
-            <img className="logo" src="/diagon_logo.png" alt="Diagon Kart Logo"  />
-            <span>Home</span>
-            <span>Shop</span>
-            <span>About</span>
+            <HashLink smooth to="/" className="nav-link">
+                <img className="logo" src="/diagon_logo.png" alt="Diagon Kart Logo"  />
+            </HashLink>
+            <span><HashLink smooth to="/" className="nav-link">
+                Home
+            </HashLink></span>
+            <span><Link to="/shop"  className="nav-link">Shop</Link></span>
+            <HashLink smooth to="/#about" className="nav-link">
+                About
+            </HashLink>
             <span>Categories</span>
             <SearchBar />
             <CartIcon />
