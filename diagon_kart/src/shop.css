@@ -177,9 +177,11 @@
 .no-prod h1{
     color: gold;
     font-family: "Outfit";
+    display: block;
 }
 .no-prod{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

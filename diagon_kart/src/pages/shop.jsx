@@ -93,22 +93,28 @@ function BuyButtons(){
     );
 }
 
-function ProductCart({selectedCat}){
-    let filteredProducts
-    if(selectedCat==="All"){
-        filteredProducts=products;
-    }else{
-        filteredProducts=products.filter((product)=>{
-            return product.category.some(cat =>
+function ProductCart({text,selectedCat}){
+    let filteredProducts=products;
+    if (selectedCat !== "All") {
+        filteredProducts = filteredProducts.filter(product =>
+            product.category.some(cat =>
                 cat.toLowerCase() === selectedCat.toLowerCase()
             )
-        });
+        );
+    }
+    if (text !== "") {
+        filteredProducts = filteredProducts.filter(product =>
+            product.category.some(cat =>
+                cat.toLowerCase() === text.toLowerCase()
+            )
+        );
     }
 
     if(filteredProducts.length===0){
         return(
             <div className='no-prod'>
                 <h1>Oops! No products available in this category right now! Check after few days! :)</h1>
+                <h1>Or try changing the word you searched.</h1>
             </div>
         );
     }
@@ -135,15 +141,20 @@ function ProductCart({selectedCat}){
 }
 
 function Shop(){
-     let [selectedCat,setSelectedCat]=useState("All");
+    let [selectedCat,setSelectedCat]=useState("All");
+    let [text,setText]=useState("");
+    const [searchInput, setSearchInput] = useState("");
 
     return(
         <>
-            <Navbar /> 
+            <Navbar searchInput={searchInput}
+                    setSearchInput={setSearchInput} 
+                    setText={setText} 
+            /> 
             <div className="shop-cnt">
                 <CatogoriePane setSelectedCat={setSelectedCat} selectedCat={selectedCat}/>
                 <div className="products-cnt">
-                    <ProductCart selectedCat={selectedCat}/>
+                    <ProductCart text={text}selectedCat={selectedCat}/>
                 </div>
             </div>
             <Footer />        

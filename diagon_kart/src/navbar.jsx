@@ -3,11 +3,18 @@ import './navbar.css';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export function SearchBar(){
+export function SearchBar({searchInput,setSearchInput,setText}){
     return (
         <div className="search-bar">
-            <input className="search-input"type="text" placeholder="Search magical items"></input>
-            <button className="search-button">
+            <input className="search-input"type="text" placeholder="Search magical items" 
+                value={searchInput}
+                onChange={
+                    (event)=>setSearchInput(event.target.value)
+                }>
+            </input>
+            <button className="search-button" onClick={
+                () => setText(searchInput)
+            }>
                 <img className="search-icon" src="/search_logo.jpg"></img>
             </button>
         </div>
@@ -23,7 +30,7 @@ function CartIcon(){
     );
 }
 
-export function Navbar(){
+export function Navbar({searchInput,setSearchInput,setText}){
     return (
         <div className="navbar">
             <HashLink smooth to="/" className="nav-link">
@@ -37,7 +44,10 @@ export function Navbar(){
                 About
             </HashLink>
             <span>Categories</span>
-            <SearchBar />
+            <SearchBar searchInput={searchInput}
+                setSearchInput={setSearchInput}
+                setText={setText} 
+            />
             <CartIcon />
             <span>Login</span>
         </div>
