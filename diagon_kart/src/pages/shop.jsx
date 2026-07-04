@@ -5,7 +5,8 @@ import '../navbar.css';
 import '../footer.css';
 //import {SearchBar} from '../navbar.jsx'
 import '../shop.css'
-import trunkBox from "../assets/products/trunk-box.jpg";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import {products} from "../data/products.js"
 
 const categories = [
     "New Arrivals",
@@ -45,16 +46,29 @@ function Quantity(){
 
 function RatingStars({ rating }) {
   const stars = [];
-  for (let i = 0; i < rating; i++) {
-    stars.push(<span key={i}>★</span>);
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  // Full stars
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<FaStar key={`full-${i}`} />);
   }
-  return (
-    <div className="rating-stars">
-        {stars}
-        <p>{rating}/5</p>
-        <Quantity />
-    </div>
+  // Half star
+  if (hasHalfStar) {
+    stars.push(<FaStarHalfAlt key="half" />);
+  }
+  // Empty stars
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(<FaRegStar key={`empty-${i}`} />);
+  }
+    return (
+        <div className="rating-stars">
+            {stars}
+            <p>{rating}/5</p>
+            <Quantity />
+        </div>
   );
+
 }
 
 
@@ -67,18 +81,24 @@ function BuyButtons(){
     );
 }
 
-function Product(){
+function ProductCart(){
     return(
-        <div className="product-cnt">
-            <div className="product-img-cnt">
-                <img src={trunkBox} alt="Trunk Box" />
-            </div>
-            <p className="product-name">Trunk Box</p>
-            <p className="product-price">Rs.1200</p>
-            <p className="product-description">A wooden suitcase style box with a carrying handle and removable shoulder strap</p>
-            <RatingStars rating={4} />
-            <BuyButtons />
-        </div>
+    <>
+        {products.map((product)=>{
+            return (
+                <div className="product-cnt" key={product.id}>
+                    <div className="product-img-cnt">
+                        <img src={product.img} alt={product.name} />
+                    </div>
+                    <p className="product-name">{product.name}</p>
+                    <p className="product-price">{product.price}</p>
+                    <p className="product-description">{product.description}</p>
+                    <RatingStars rating={product.rating} />
+                    <BuyButtons />
+                </div>
+            );
+        })}
+    </>
     );
 }
 
@@ -89,9 +109,7 @@ function Shop(){
             <div className="shop-cnt">
                 <CatogoriePane />
                 <div className="products-cnt">
-                    <div className="products-row">
-                        <Product />
-                    </div>
+                    <ProductCart />
                 </div>
             </div>
             <Footer />        

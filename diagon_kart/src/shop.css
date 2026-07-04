@@ -59,7 +59,7 @@
     padding: 20px;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 250px;
+    width: 273px;
     background-color: rgb(21, 21, 21);
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,.35);
@@ -151,4 +151,15 @@
     border-radius: 5px;
     padding: 5px;
     font-family: "Outfit";
+}
+.products-cnt{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product-cnt{
+    width: 100%;
+    max-width: 300px;
 }
