@@ -35,8 +35,10 @@ export function SearchBar({searchInput,setSearchInput,setText}){
 function CartIcon(){
     return (
         <div className="cart-icon-container">
-            <img className="cart-icon" src="/cart_logo.png" alt="Cart-logo"></img>
-            <span>Cart</span>
+            <HashLink smooth to="/cart" className="nav-link">
+                <img className="cart-icon" src="/cart_logo.png" alt="Cart-logo"></img>
+                <span>Cart</span>
+            </HashLink>
         </div>
     );
 }

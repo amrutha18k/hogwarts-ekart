@@ -74,16 +74,23 @@ export function RatingStars({ rating,det=false }) {
 }
 
 
-export function BuyButtons({ detailed = false }){
+
+export function BuyButtons({ detailed = false,product,addToCart}){
     return(
         <div className={detailed ? "buy-buttons detailed-buy" : "buy-buttons"}>
-            <button className="add-to-cart">Add to Cart</button>
+            <button className="add-to-cart" 
+                onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    addToCart(product);
+                }}
+            >Add to Cart</button>
             <button className="buy-now">Buy Now</button>
         </div>
     );
 }
 
-function ProductCart({text,selectedCat}){
+function ProductCart({text,selectedCat,addToCart}){
     let filteredProducts=products;
     if (selectedCat !== "All"&&selectedCat!=="Best Sellers") {
         filteredProducts = filteredProducts.filter(product =>
@@ -130,7 +137,7 @@ function ProductCart({text,selectedCat}){
                             <p className="product-price">{product.price}</p>
                             <p className="product-description">{product.description}</p>
                             <RatingStars rating={product.rating} />
-                            <BuyButtons />
+                            <BuyButtons  product={product} addToCart={addToCart}/>
                         </div>
                     </Link>
             );
@@ -139,7 +146,7 @@ function ProductCart({text,selectedCat}){
     );
 }
 
-function Shop(){
+function Shop({addToCart}){
     let [selectedCat,setSelectedCat]=useState("All");
     let [text,setText]=useState("");
     const [searchInput, setSearchInput] = useState("");
@@ -153,7 +160,7 @@ function Shop(){
             <div className="shop-cnt">
                 <CatogoriePane setSelectedCat={setSelectedCat} selectedCat={selectedCat} setText={setText}/>
                 <div className="products-cnt">
-                    <ProductCart text={text}selectedCat={selectedCat}/>
+                    <ProductCart text={text}selectedCat={selectedCat} addToCart={addToCart}/>
                 </div>
             </div>
             <Footer />        

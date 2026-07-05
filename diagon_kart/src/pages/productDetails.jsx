@@ -16,7 +16,7 @@ function Quantity(){
     );
 }
 
-function Product({product}){
+function Product({product,addToCart}){
     return(
         <div className="prod-det">
             <div className="image-box">
@@ -33,13 +33,13 @@ function Product({product}){
                     <p>{product.longdescription}</p>
                 </div>
                 <Quantity />
-                <BuyButtons detailed={true}/>
+                <BuyButtons detailed={true} product={product} addToCart={addToCart}/>
             </div>
         </div>
     );
 }
 
-export function ProductDetails(){
+export function ProductDetails({addToCart}){
     let {id}=useParams();
     let product=products.find(prod=>
         {
@@ -49,7 +49,7 @@ export function ProductDetails(){
         <>
             <Navbar />
             <div className="prod-det-cnt">
-                <Product product={product}/>
+                <Product product={product} addToCart={addToCart}/>
             </div>
             <Footer />
         </>
