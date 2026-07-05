@@ -92,7 +92,6 @@ export const products=[
         category: ["school","travel","Quidditch","Quiditch","broom","nimbus","firebolt","fire","quidditch game","harry potter"],
         longdescription:"Super fast with a very sleek design, a new edition of brooms. Brand new edition of the Firebolt. Be fast like a rocket! Available in all sizes for young adults to adults."
     },{
-    },{
         id:10,
         name:"Golden Snitch",
         img:snitch,

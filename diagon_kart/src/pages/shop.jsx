@@ -25,7 +25,7 @@ const categories = [
     "Limited"
 ];
 
-function CatogoriePane({setSelectedCat,selectedCat}){
+function CatogoriePane({setSelectedCat,selectedCat,setText}){
     return(
         <div className="catogories-cnt">
             {categories.map(category => (
@@ -36,6 +36,7 @@ function CatogoriePane({setSelectedCat,selectedCat}){
                 }onClick={
                     ()=>{
                         setSelectedCat(category);
+                        setText("");
                     }
                 }>
                     {category}
@@ -93,8 +94,9 @@ function ProductCart({text,selectedCat}){
     }
     if (text !== "") {
         filteredProducts = filteredProducts.filter(product =>
+            product.name.toLowerCase().includes(text.toLowerCase()) ||
             product.category.some(cat =>
-                cat.toLowerCase() === text.toLowerCase()
+                cat.toLowerCase().includes(text.toLowerCase())
             )
         );
     }
@@ -119,9 +121,8 @@ function ProductCart({text,selectedCat}){
     <>
         {filteredProducts.map((product)=>{
             return (
-                <>
-                    <Link to={`/product/${product.id}`} className="product-link">
-                        <div className="product-cnt" key={product.id}>
+                    <Link to={`/product/${product.id}`} className="product-link" key={product.id}>
+                        <div className="product-cnt" >
                             <div className="product-img-cnt">
                                 <img src={product.img} alt={product.name} />
                             </div>
@@ -132,7 +133,6 @@ function ProductCart({text,selectedCat}){
                             <BuyButtons />
                         </div>
                     </Link>
-                </>
             );
         })}
     </>
@@ -151,7 +151,7 @@ function Shop(){
                     setText={setText} 
             /> 
             <div className="shop-cnt">
-                <CatogoriePane setSelectedCat={setSelectedCat} selectedCat={selectedCat}/>
+                <CatogoriePane setSelectedCat={setSelectedCat} selectedCat={selectedCat} setText={setText}/>
                 <div className="products-cnt">
                     <ProductCart text={text}selectedCat={selectedCat}/>
                 </div>

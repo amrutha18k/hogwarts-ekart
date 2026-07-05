@@ -10,11 +10,22 @@ export function SearchBar({searchInput,setSearchInput,setText}){
                 value={searchInput}
                 onChange={
                     (event)=>setSearchInput(event.target.value)
-                }>
+                }
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                        setText(searchInput);
+                        setSearchInput("");
+                    }
+                }}
+                >
             </input>
             <button className="search-button" onClick={
-                () => setText(searchInput)
-            }>
+                () => {
+                    setText(searchInput)
+                    setSearchInput("")       
+                }
+            }
+            >
                 <img className="search-icon" src="/search_logo.jpg"></img>
             </button>
         </div>
