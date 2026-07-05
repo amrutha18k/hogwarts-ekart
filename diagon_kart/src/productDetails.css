@@ -1,0 +1,133 @@
+.prod-det-cnt{
+   background:linear-gradient(
+        180deg,
+        #07152f 0%,
+        #142850 35%,
+        #2b1f52 70%,
+        #3b2459 100%
+    );
+    min-height: 100vh;
+    background:
+    radial-gradient(circle at top, rgba(255, 214, 102, 0.15), transparent 35%),
+    linear-gradient(180deg, #1b0c2e 0%, #2f1450 40%, #2b1f52 100%);
+    padding-top:100px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+.prod-det{
+    width: 90%;
+    max-width: 1200px;
+    min-height: auto;
+    background-color: rgb(21,21,21);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+    margin: 0 auto;
+    cursor:pointer;
+    border: gold;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    padding: 30px;
+}
+.prod-det-img{
+    width: 36%;
+    max-width: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+    object-fit: contain;
+}
+.prod-det-list{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.prod-name{
+    color:gold;
+    font-family: "Outfit";
+    font-size: 40px;
+    font-weight: bold;
+}
+.prod-price{
+    color:antiquewhite;
+    font-family: "Outfit";
+    font-size: 30px;
+    font-weight: bold;
+}
+.prod-description{
+    color:gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+     max-width: 600px;
+    line-height: 1.9;
+}
+.prod-det-list p{
+    margin: 0;
+}
+.prod-det-img{
+    width:380px;
+    height:380px;
+    object-fit:contain;
+
+    background:white;
+    border-radius:15px;
+    padding:20px;
+}
+.detailed-buy{
+    margin-top:20px;
+    gap:20px;
+}
+
+.detailed-buy button{
+    padding:16px 36px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+}
+.prod-info{
+    margin-top:10px;
+}
+
+.prod-info h3{
+    color:white;
+    font-family:"Outfit";
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.prod-info p{
+    color:#f5d76e;
+    line-height:1.8;
+    max-width:520px;
+    font-size:20px;
+}
+.image-box{
+    width:420px;
+    height:420px;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+.prod-det-img{
+    width:80%;
+    height:80%;
+    object-fit:contain;
+    border-radius: 20px;
+}
+.rat-det-star{
+    color: #FFD700;
+    font-size: 20px;
+    letter-spacing: 2px;
+    display:flex;
+    flex-direction:row;
+    gap:5px;
+}
+.det{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

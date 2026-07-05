@@ -57,6 +57,8 @@
     display:flex;
     flex-direction:row;
     gap:5px;
+    justify-content: center;
+    align-items: center;
 }
 .rating-stars p {
     margin-right: 2px;
@@ -138,7 +140,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 .quantity-cnt button{
     background-color: rgb(40, 31, 49);
@@ -149,18 +151,20 @@
     cursor: pointer;
     font-family: "Outfit";
     transition: background-color 0.3s ease;
+    padding:15px;
 }
 .quantity-cnt button:hover{
     background-color: rgb(200, 194, 160);
     color:black;
 }
 .quantity-input{
-    width: 50px;
+    width: 100px;
     text-align: center;
     border: none;
     border-radius: 5px;
     padding: 5px;
     font-family: "Outfit";
+    padding: 15px;
 }
 .products-cnt{
     display: grid;
@@ -184,4 +188,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.product-link{
+    text-decoration: none;
+    color: inherit;
 }

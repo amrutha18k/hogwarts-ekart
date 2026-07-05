@@ -8,7 +8,7 @@ import '../footer.css';
 import '../shop.css'
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import {products} from "../data/products.js"
-
+import { Link } from "react-router-dom";
 
 
 const categories = [
@@ -46,17 +46,7 @@ function CatogoriePane({setSelectedCat,selectedCat}){
 }
 
 
-function Quantity(){
-    return (
-        <div className="quantity-cnt">
-            <button className="quantity-btn">-</button>
-            <input className="quantity-input" type="number" defaultValue={1} min="1" max="10" />
-            <button className="quantity-btn">+</button>
-        </div>
-    );
-}
-
-function RatingStars({ rating }) {
+export function RatingStars({ rating,det=false }) {
   const stars = [];
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
@@ -74,19 +64,18 @@ function RatingStars({ rating }) {
     stars.push(<FaRegStar key={`empty-${i}`} />);
   }
     return (
-        <div className="rating-stars">
+        <div className={det?"rat-det-star":"rating-stars"}>
             {stars}
             <p>{rating}/5</p>
-            <Quantity />
         </div>
   );
 
 }
 
 
-function BuyButtons(){
+export function BuyButtons({ detailed = false }){
     return(
-        <div className="buy-buttons">
+        <div className={detailed ? "buy-buttons detailed-buy" : "buy-buttons"}>
             <button className="add-to-cart">Add to Cart</button>
             <button className="buy-now">Buy Now</button>
         </div>
@@ -130,16 +119,20 @@ function ProductCart({text,selectedCat}){
     <>
         {filteredProducts.map((product)=>{
             return (
-                <div className="product-cnt" key={product.id}>
-                    <div className="product-img-cnt">
-                        <img src={product.img} alt={product.name} />
-                    </div>
-                    <p className="product-name">{product.name}</p>
-                    <p className="product-price">{product.price}</p>
-                    <p className="product-description">{product.description}</p>
-                    <RatingStars rating={product.rating} />
-                    <BuyButtons />
-                </div>
+                <>
+                    <Link to={`/product/${product.id}`} className="product-link">
+                        <div className="product-cnt" key={product.id}>
+                            <div className="product-img-cnt">
+                                <img src={product.img} alt={product.name} />
+                            </div>
+                            <p className="product-name">{product.name}</p>
+                            <p className="product-price">{product.price}</p>
+                            <p className="product-description">{product.description}</p>
+                            <RatingStars rating={product.rating} />
+                            <BuyButtons />
+                        </div>
+                    </Link>
+                </>
             );
         })}
     </>
