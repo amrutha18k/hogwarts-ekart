@@ -95,7 +95,7 @@ function BuyButtons(){
 
 function ProductCart({text,selectedCat}){
     let filteredProducts=products;
-    if (selectedCat !== "All") {
+    if (selectedCat !== "All"&&selectedCat!=="Best Sellers") {
         filteredProducts = filteredProducts.filter(product =>
             product.category.some(cat =>
                 cat.toLowerCase() === selectedCat.toLowerCase()
@@ -107,6 +107,12 @@ function ProductCart({text,selectedCat}){
             product.category.some(cat =>
                 cat.toLowerCase() === text.toLowerCase()
             )
+        );
+    }
+
+   if (selectedCat === "Best Sellers"||text==="top") {
+        filteredProducts = [...filteredProducts].sort(
+            (a, b) => b.rating - a.rating
         );
     }
 
