@@ -6,12 +6,12 @@ import '../productDetails.css';
 import {BuyButtons} from './shop.jsx';
 import {RatingStars} from './shop.jsx';
 
-function Quantity(){
+export function Quantity({det=false}){
     return (
-        <div className="quantity-cnt">
-            <button className="quantity-btn">-</button>
-            <input className="quantity-input" type="number" defaultValue={1} min="1" max="10" />
-            <button className="quantity-btn">+</button>
+        <div className={det?"qty-cnt":"quantity-cnt"}>
+            <button className={det?"qty-btn":"quantity-btn"}>-</button>
+            <input className={det?"qty-inp":"quantity-input"} type="number" defaultValue={1} min="1" max="10" />
+            <button className={det?"qty-btn":"quantity-btn"}>+</button>
         </div>
     );
 }

@@ -83,6 +83,7 @@ export function BuyButtons({ detailed = false,product,addToCart}){
                     e.preventDefault();
                     e.stopPropagation();
                     addToCart(product);
+                    alert('Your item has been added to Cart. Click ok to continue')
                 }}
             >Add to Cart</button>
             <button className="buy-now">Buy Now</button>

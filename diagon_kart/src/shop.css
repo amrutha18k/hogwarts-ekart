@@ -166,6 +166,38 @@
     font-family: "Outfit";
     padding: 15px;
 }
+
+.qty-cnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.qty-btn{
+    background-color: rgb(40, 31, 49);
+    color: gold;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Outfit";
+    transition: background-color 0.3s ease;
+    padding:8px;
+}
+.qty-btn:hover{
+    background-color: rgb(200, 194, 160);
+    color:black;
+}
+.qty-inp{
+    width: 100px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "Outfit";
+    padding: 9px;
+}
+
 .products-cnt{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
