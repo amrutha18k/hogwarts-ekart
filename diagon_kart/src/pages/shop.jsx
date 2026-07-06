@@ -135,7 +135,7 @@ function ProductCart({text,selectedCat,addToCart}){
                                 <img src={product.img} alt={product.name} />
                             </div>
                             <p className="product-name">{product.name}</p>
-                            <p className="product-price">{product.price}</p>
+                            <p className="product-price">Rs.{product.price}</p>
                             <p className="product-description">{product.description}</p>
                             <RatingStars rating={product.rating} />
                             <BuyButtons  product={product} addToCart={addToCart}/>
