@@ -24,12 +24,18 @@ function App(){
         });
     }
 
+    function removeFromCart(product){
+        setCart(prevCart => {
+            return prevCart.filter(item => item.id !== product.id);
+        });
+    }
+
     return(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
           <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}/>}/>
-          <Route path="/cart" element={<Cart cart={cart} />} />
+          <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
         </Routes>
     ); 
     

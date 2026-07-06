@@ -4,7 +4,7 @@ import '../cart.css';
 import '../shop.css';
 import {Quantity} from './productDetails.jsx';
 
-function ProductCart({cart}){
+function ProductCart({cart,removeFromCart}){
     if(cart.length!==0){
         return (
             cart.map((product)=>{
@@ -16,7 +16,7 @@ function ProductCart({cart}){
                         <p className="product-name">{product.name}</p>
                         <p className="product-price">Rs.{product.price}</p>
                         <Quantity det={true}/> 
-                        <button>Remove Item</button>               
+                        <button onClick={() => removeFromCart(product)}>Remove Item</button>               
                     </div>
                 );
             })
@@ -69,7 +69,7 @@ function OrderSummary({cart}){
     
 }
 
-export function Cart({cart}){
+export function Cart({cart,removeFromCart}){
     return (
         <>
             <Navbar />
@@ -79,7 +79,7 @@ export function Cart({cart}){
                     <p>{cart.length===0?"You cart is empty! :)":`You have ${cart.length} magical items waiting for you! ✨`}</p>
                 </div>
                 <div className="products-cnt">
-                    <ProductCart cart={cart} />
+                    <ProductCart cart={cart} removeFromCart={removeFromCart}/>
                 </div>
                 <div className='order-cnt'>
                     <OrderSummary cart={cart}/>
