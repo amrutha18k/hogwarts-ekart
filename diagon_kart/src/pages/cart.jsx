@@ -2,9 +2,30 @@ import {Navbar} from '../navbar.jsx';
 import { Footer } from '../footer.jsx';
 import '../cart.css';
 import '../shop.css';
-import {Quantity} from './productDetails.jsx';
 
-function ProductCart({cart,removeFromCart}){
+
+function CartQuantity({product,addQuantity,subQuantity}){
+    return(
+        <div className="qty-cnt">
+            <button onClick={
+                () => subQuantity(product)
+            }>-</button>
+
+            <input
+                className="qty-inp"
+                type="number"
+                value={product.quantity}
+                readOnly
+            />
+
+            <button onClick={
+                ()=>addQuantity(product)
+            }>+</button>
+        </div>
+    );
+}
+
+function ProductCart({cart,removeFromCart,addQuantity,subQuantity}){
     if(cart.length!==0){
         return (
             cart.map((product)=>{
@@ -15,14 +36,20 @@ function ProductCart({cart,removeFromCart}){
                         </div>
                         <p className="product-name">{product.name}</p>
                         <p className="product-price">Rs.{product.price}</p>
-                        <Quantity det={true}/> 
+                        <CartQuantity
+                            product={product}
+                            addQuantity={addQuantity}
+                            subQuantity={subQuantity}
+                        />
                         <button onClick={() => removeFromCart(product)}>Remove Item</button>               
                     </div>
                 );
             })
-    );
+        );
     }
 }
+
+
 
 function findTot(cart){
     let totQ=0;
@@ -69,7 +96,7 @@ function OrderSummary({cart}){
     
 }
 
-export function Cart({cart,removeFromCart}){
+export function Cart({cart,removeFromCart,addQuantity,subQuantity}){
     return (
         <>
             <Navbar />
@@ -79,7 +106,7 @@ export function Cart({cart,removeFromCart}){
                     <p>{cart.length===0?"You cart is empty! :)":`You have ${cart.length} magical items waiting for you! ✨`}</p>
                 </div>
                 <div className="products-cnt">
-                    <ProductCart cart={cart} removeFromCart={removeFromCart}/>
+                    <ProductCart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity}/>
                 </div>
                 <div className='order-cnt'>
                     <OrderSummary cart={cart}/>

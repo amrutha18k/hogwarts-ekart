@@ -75,14 +75,14 @@ export function RatingStars({ rating,det=false }) {
 
 
 
-export function BuyButtons({ detailed = false,product,addToCart}){
+export function BuyButtons({ detailed = false,product,addToCart,quantity}){
     return(
         <div className={detailed ? "buy-buttons detailed-buy" : "buy-buttons"}>
             <button className="add-to-cart" 
                 onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    addToCart(product);
+                    addToCart(product,quantity);
                     alert('Your item has been added to Cart. Click ok to continue')
                 }}
             >Add to Cart</button>

@@ -9,17 +9,17 @@ import {Cart} from './pages/cart.jsx';
 function App(){
 
     const [cart,setCart]=useState([]);
-    function addToCart(product) {
+    function addToCart(product,quantity) {
         setCart(prevCart => {
             const existingItem = prevCart.find(item => item.id === product.id);
             if (existingItem) {
                 return prevCart.map(item =>
                     item.id === product.id
-                        ? { ...item, quantity: item.quantity + 1 }
+                        ? { ...item, quantity: item.quantity + quantity }
                         : item
                 );
             } else {
-                return [...prevCart, { ...product, quantity: 1 }];
+                return [...prevCart, { ...product, quantity: quantity }];
             }
         });
     }
@@ -30,12 +30,47 @@ function App(){
         });
     }
 
+    function addQuantity(product){
+        setCart(prevCart=>{
+                return prevCart.map(item=>{
+                    if(product.id===item.id){
+                        return{
+                            ...item,
+                            quantity: item.quantity+1
+                        }
+                    }else{
+                        return item;
+                    }
+                });
+        });
+    }
+
+    function subQuantity(product){
+        setCart(prevCart=>{
+            return prevCart.map(item=>{
+                if(product.id===item.id){
+                    if(item.quantity>1){
+                        return{
+                            ...item,
+                            quantity:item.quantity-1
+                        }
+                    }else{
+                        alert('cant remove item!');
+                        return item;
+                    }
+                }else{
+                    return item;
+                }
+            });
+        });
+    }
+
     return(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
           <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}/>}/>
-          <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+          <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity} />} />
         </Routes>
     ); 
     

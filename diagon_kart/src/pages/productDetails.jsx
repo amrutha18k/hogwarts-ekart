@@ -5,18 +5,20 @@ import {Footer} from '../footer.jsx';
 import '../productDetails.css';
 import {BuyButtons} from './shop.jsx';
 import {RatingStars} from './shop.jsx';
+import {useState} from 'react';
 
-export function Quantity({det=false}){
+export function QuantitySelector({det=false,quantity,setQuantity}){
     return (
         <div className={det?"qty-cnt":"quantity-cnt"}>
-            <button className={det?"qty-btn":"quantity-btn"}>-</button>
-            <input className={det?"qty-inp":"quantity-input"} type="number" defaultValue={1} min="1" max="10" />
-            <button className={det?"qty-btn":"quantity-btn"}>+</button>
+            <button className={det?"qty-btn":"quantity-btn"} onClick={()=>{quantity>1?setQuantity(prev=>prev-1):alert('not enough quantity!!')}}>-</button>
+            <input className={det?"qty-inp":"quantity-input"} type="number" value={quantity}  readOnly />
+            <button className={det?"qty-btn":"quantity-btn"} onClick={()=>{setQuantity(prev=>prev+1);}}>+</button>
         </div>
     );
 }
 
 function Product({product,addToCart}){
+    const [quantity, setQuantity] = useState(1);
     return(
         <div className="prod-det">
             <div className="image-box">
@@ -32,8 +34,8 @@ function Product({product,addToCart}){
                     <h3>Description</h3>
                     <p>{product.longdescription}</p>
                 </div>
-                <Quantity />
-                <BuyButtons detailed={true} product={product} addToCart={addToCart}/>
+                <QuantitySelector quantity={quantity} setQuantity={setQuantity}/>
+                <BuyButtons detailed={true} product={product} addToCart={addToCart} quantity={quantity} />
             </div>
         </div>
     );
