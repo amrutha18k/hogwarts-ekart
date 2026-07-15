@@ -2,7 +2,7 @@ import {Navbar} from '../navbar.jsx';
 import { Footer } from '../footer.jsx';
 import '../cart.css';
 import '../shop.css';
-
+import { Link } from "react-router-dom";
 
 function CartQuantity({product,addQuantity,subQuantity}){
     return(
@@ -81,7 +81,7 @@ function OrderSummary({cart}){
                         <div class="order-info"key={item.id}>
                             <p className='item'>{item.name}</p>
                             <p className='item'>{item.quantity}</p>
-                            <p className='item'>{item.price}</p>
+                            <p className='item'>{(item.price)*(item.quantity)}</p>
                         </div>
                     );
                 })}
@@ -89,7 +89,9 @@ function OrderSummary({cart}){
                     <p className="item">Total: </p>
                     <p className="item">{totPrice(cart)}</p>
                 </div>
-                <button className="btn">Proceed to buy</button>
+                <Link to="/checkout">
+                    <button className="btn">Proceed to buy</button>
+                </Link>
             </div>
          );
     }

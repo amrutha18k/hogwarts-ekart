@@ -5,12 +5,14 @@ import Shop from "./pages/shop.jsx";
 import {ProductDetails} from "./pages/productDetails.jsx";
 import {useState} from "react";
 import {Cart} from './pages/cart.jsx';
+import {CheckOut} from './pages/checkout.jsx';
 
 function App(){
 
     const [cart,setCart]=useState([]);
-    function addToCart(product,quantity) {
+    function addToCart(product,quantity = 1) {
         setCart(prevCart => {
+            quantity = quantity ?? 1;
             const existingItem = prevCart.find(item => item.id === product.id);
             if (existingItem) {
                 return prevCart.map(item =>
@@ -71,6 +73,7 @@ function App(){
           <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
           <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}/>}/>
           <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity} />} />
+          <Route path="/checkout" element={<CheckOut/>}/>
         </Routes>
     ); 
     
