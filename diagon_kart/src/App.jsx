@@ -3,13 +3,26 @@ import Home from './pages/home.jsx';
 import './App.css';
 import Shop from "./pages/shop.jsx";
 import {ProductDetails} from "./pages/productDetails.jsx";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {Cart} from './pages/cart.jsx';
 import {CheckOut} from './pages/checkout.jsx';
 
 function App(){
 
-    const [cart,setCart]=useState([]);
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem("cart");
+
+        if (savedCart) {
+            return JSON.parse(savedCart);
+        }
+
+        return [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+
     function addToCart(product,quantity = 1) {
         setCart(prevCart => {
             quantity = quantity ?? 1;
