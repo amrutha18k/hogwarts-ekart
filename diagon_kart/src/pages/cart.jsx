@@ -67,7 +67,7 @@ function totPrice(cart){
     return tot;
 }
 
-function OrderSummary({cart}){
+function OrderSummary({cart,freeCart}){
     if(cart.length!=0){
         return(
             <div className="order-sum">
@@ -90,7 +90,7 @@ function OrderSummary({cart}){
                     <p className="item">{totPrice(cart)}</p>
                 </div>
                 <Link to="/checkout">
-                    <button className="btn">Proceed to buy</button>
+                    <button className="btn" onClick={freeCart}>Proceed to buy</button>
                 </Link>
             </div>
          );
@@ -98,7 +98,7 @@ function OrderSummary({cart}){
     
 }
 
-export function Cart({cart,removeFromCart,addQuantity,subQuantity}){
+export function Cart({cart,removeFromCart,addQuantity,subQuantity,freeCart}){
     return (
         <>
             <Navbar />
@@ -111,7 +111,7 @@ export function Cart({cart,removeFromCart,addQuantity,subQuantity}){
                     <ProductCart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity}/>
                 </div>
                 <div className='order-cnt'>
-                    <OrderSummary cart={cart}/>
+                    <OrderSummary cart={cart} freeCart={freeCart}/>
                 </div>
             </div>
             <Footer />

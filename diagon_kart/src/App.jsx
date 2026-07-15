@@ -23,6 +23,10 @@ function App(){
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
+    function freeCart(){
+        setCart([]);
+    }
+
     function addToCart(product,quantity = 1) {
         setCart(prevCart => {
             quantity = quantity ?? 1;
@@ -85,7 +89,7 @@ function App(){
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
           <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}/>}/>
-          <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity} />} />
+          <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity} freeCart={freeCart} />} />
           <Route path="/checkout" element={<CheckOut/>}/>
         </Routes>
     ); 
