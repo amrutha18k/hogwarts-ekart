@@ -131,3 +131,73 @@
     flex-direction: column;
     gap: 10px;
 }
+@media (max-width:768px){
+
+    .prod-det{
+
+        flex-direction:column;
+
+        gap:30px;
+
+        align-items:center;
+    }
+
+    .image-box{
+
+        width:100%;
+
+        height:auto;
+
+        padding:0;
+    }
+
+    .prod-det-img{
+
+        width:240px;
+
+        height:240px;
+    }
+
+    .prod-name{
+
+        font-size:30px;
+    }
+
+    .prod-price{
+
+        font-size:24px;
+    }
+
+    .prod-info p{
+
+        font-size:17px;
+    }
+
+    .detailed-buy{
+
+        flex-direction:column;
+    }
+
+}
+@media (max-width:768px){
+
+    .qty-inp{
+
+        width:60px;
+    }
+
+    .quantity-input{
+
+        width:60px;
+    }
+    .prod-det{
+        width:80%;
+        margin-bottom: 20px;
+    }
+
+    .prod-det-cnt{
+        display: flex;
+        justify-content: center;
+    }
+
+}

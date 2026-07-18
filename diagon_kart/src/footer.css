@@ -77,3 +77,20 @@
 .nav-link:hover {
     color: white; /* Hogwarts gold */
 }
+@media (max-width:768px){
+
+    .footer-links{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:center;
+    }
+
+    .footer-logo h2{
+
+        font-size:1.6rem;
+    }
+
+}

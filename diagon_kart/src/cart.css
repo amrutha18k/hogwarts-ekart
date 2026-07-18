@@ -106,3 +106,23 @@
 .btn:hover{
     background-color: rgb(253, 247, 210);
 } 
+@media (max-width:768px){
+
+    .order-sum{
+
+        width:100%;
+    }
+
+    .order-info{
+
+        grid-template-rows:1fr;
+
+        gap:10px;
+    }
+
+    .item{
+
+        text-align:center;
+    }
+
+}

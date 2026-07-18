@@ -25,7 +25,7 @@ const categories = [
     "Limited"
 ];
 
-function CatogoriePane({setSelectedCat,selectedCat,setText}){
+function CatogoryPane({setSelectedCat,selectedCat,setText}){
     return(
         <div className="catogories-cnt">
             {categories.map(category => (
@@ -138,7 +138,9 @@ function ProductCart({text,selectedCat,addToCart}){
                             <p className="product-price">Rs.{product.price}</p>
                             <p className="product-description">{product.description}</p>
                             <RatingStars rating={product.rating} />
-                            <BuyButtons  product={product} addToCart={addToCart}/>
+                            <Link to="/checkout" className="product-link">
+                                <BuyButtons  product={product} addToCart={addToCart}/>
+                            </Link>
                         </div>
                     </Link>
             );
@@ -159,7 +161,7 @@ function Shop({addToCart}){
                     setText={setText} 
             /> 
             <div className="shop-cnt">
-                <CatogoriePane setSelectedCat={setSelectedCat} selectedCat={selectedCat} setText={setText}/>
+                <CatogoryPane setSelectedCat={setSelectedCat} selectedCat={selectedCat} setText={setText}/>
                 <div className="products-cnt">
                     <ProductCart text={text}selectedCat={selectedCat} addToCart={addToCart}/>
                 </div>

@@ -225,3 +225,47 @@
     text-decoration: none;
     color: inherit;
 }
+@media (max-width:768px){
+
+    .catogories-cnt{
+        overflow-x:auto;
+        justify-content:flex-start;
+        gap:12px;
+        padding:12px;
+    }
+
+    .catogories-cnt::-webkit-scrollbar{
+        display:none;
+    }
+
+    .cat-btn,
+    .cat-active{
+        flex-shrink:0;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .products-cnt{
+
+        grid-template-columns:1fr;
+
+        padding:20px;
+    }
+
+    .product-cnt{
+
+        max-width:90%;
+
+        margin:0 auto;
+    }
+
+    .shop-cnt{
+        margin-top:60px;
+    }
+    .catogories-cnt{
+        margin-top: 65px;
+    }
+
+}

@@ -46,3 +46,23 @@
     margin-top: 80px;
     color: #F5E6C8;
 }
+@media (max-width:768px){
+
+    .about-cnt{
+        padding:70px 25px;
+    }
+
+    .about-cnt h1{
+        font-size:2rem;
+    }
+
+    .about-cnt h2{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .about-cnt h3{
+        font-size:1rem;
+    }
+
+}

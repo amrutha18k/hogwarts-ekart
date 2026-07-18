@@ -2,6 +2,9 @@
 import './navbar.css';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 
 export function SearchBar({searchInput,setSearchInput,setText}){
     return (
@@ -35,7 +38,7 @@ export function SearchBar({searchInput,setSearchInput,setText}){
 function CartIcon(){
     return (
         <div className="cart-icon-container">
-            <HashLink smooth to="/cart" className="nav-link">
+            <HashLink smooth to="/cart" className="cart-link">
                 <img className="cart-icon" src="/cart_logo.png" alt="Cart-logo"></img>
                 <span>Cart</span>
             </HashLink>
@@ -44,25 +47,80 @@ function CartIcon(){
 }
 
 export function Navbar({searchInput,setSearchInput,setText}){
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
+        <>
         <div className="navbar">
-            <HashLink smooth to="/" className="nav-link">
-                <img className="logo" src="/diagon_logo.png" alt="Diagon Kart Logo"  />
-            </HashLink>
-            <span><HashLink smooth to="/" className="nav-link">
-                Home
-            </HashLink></span>
-            <span><Link to="/shop"  className="nav-link">Shop</Link></span>
-            <HashLink smooth to="/#about" className="nav-link">
-                About
-            </HashLink>
-            <span>Categories</span>
-            <SearchBar searchInput={searchInput}
-                setSearchInput={setSearchInput}
-                setText={setText} 
-            />
-            <CartIcon />
-            <span>Login</span>
+            
+                <HashLink smooth to="/" className="logo-link">
+                    <img className="logo" src="/diagon_logo.png" alt="Diagon Kart Logo"  />
+                </HashLink>
+           
+           
+                <span><HashLink smooth to="/" className="nav-link">
+                    Home
+                </HashLink></span>
+                <span><Link to="/shop"  className="nav-link">Shop</Link></span>
+                <HashLink smooth to="/#about" className="nav-link">
+                    About
+                </HashLink>
+                <span>Categories</span>
+                <SearchBar searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                    setText={setText} 
+                />
+            
+            
+                <CartIcon />
+                <span>Login</span>
+                <div
+                    className="menu-icon"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    {menuOpen ? <FaTimes /> : <FaBars />}
+                </div>
+            
         </div>
+        {menuOpen && (
+            <div className="mobile-menu">
+
+                <HashLink
+                    smooth
+                    to="/"
+                    className="mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    Home
+                </HashLink>
+
+                <Link
+                    to="/shop"
+                    className="mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    Shop
+                </Link>
+
+                <HashLink
+                    smooth
+                    to="/#about"
+                    className="mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    About
+                </HashLink>
+
+                <Link
+                    to="/cart"
+                    className="mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    Cart
+                </Link>
+
+            </div>
+        )}
+        </>
     );
 }
