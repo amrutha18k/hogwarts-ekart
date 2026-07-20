@@ -76,7 +76,10 @@ export function Navbar({searchInput,setSearchInput,setText}){
             
             
                 <CartIcon />
-                <span>Login</span>
+                <Link to="/login" className="nav-link">
+                    <span>Login</span>
+                </Link>
+                
                 <div
                     className="menu-icon"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -120,6 +123,21 @@ export function Navbar({searchInput,setSearchInput,setText}){
                     onClick={() => setMenuOpen(false)}
                 >
                     Cart
+                </Link>
+
+                <Link
+                    to="/explore"
+                    className="mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    Explore
+                </Link>
+                <Link
+                    to="/login"
+                    className="mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    Login
                 </Link>
 
             </div>

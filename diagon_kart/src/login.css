@@ -1,0 +1,35 @@
+.cls-name{
+        background:linear-gradient(
+        180deg,
+        #07152f 0%,
+        #142850 35%,
+        #2b1f52 70%,
+        #3b2459 100%
+    );
+    min-height: 100vh;
+    background:
+    radial-gradient(circle at top, rgba(255, 214, 102, 0.15), transparent 35%),
+    linear-gradient(180deg, #1b0c2e 0%, #2f1450 40%, #2b1f52 100%);
+    color:gold;
+    font-family: "Outfit";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.buy-buttons{
+    background-color: gold;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Outfit";
+    transition: background-color 0.3s ease;
+}
+.buy-buttons :hover{
+    background-color: rgb(253, 247, 210);
+}
+.nav-link{
+    text-decoration: none;
+}

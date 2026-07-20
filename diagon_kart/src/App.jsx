@@ -7,6 +7,7 @@ import {useState,useEffect} from "react";
 import {Cart} from './pages/cart.jsx';
 import {CheckOut} from './pages/checkout.jsx';
 import {Explore} from './pages/explore.jsx';
+import {Login} from './pages/login.jsx';
 
 function App(){
 
@@ -93,6 +94,7 @@ function App(){
           <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity} freeCart={freeCart} />} />
           <Route path="/checkout" element={<CheckOut/>}/>
           <Route path="/explore" element={<Explore />}/>
+          <Route path="/login" element={<Login/>}/>
         </Routes>
     ); 
     
