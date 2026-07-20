@@ -65,7 +65,10 @@ export function Navbar({searchInput,setSearchInput,setText}){
                 <HashLink smooth to="/#about" className="nav-link">
                     About
                 </HashLink>
-                <span>Categories</span>
+                <Link  to="/explore" className="nav-link">
+                    <span>Explore</span>
+                </Link>
+                
                 <SearchBar searchInput={searchInput}
                     setSearchInput={setSearchInput}
                     setText={setText} 

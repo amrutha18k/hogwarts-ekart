@@ -6,6 +6,7 @@ import {ProductDetails} from "./pages/productDetails.jsx";
 import {useState,useEffect} from "react";
 import {Cart} from './pages/cart.jsx';
 import {CheckOut} from './pages/checkout.jsx';
+import {Explore} from './pages/explore.jsx';
 
 function App(){
 
@@ -91,6 +92,7 @@ function App(){
           <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}/>}/>
           <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addQuantity={addQuantity} subQuantity={subQuantity} freeCart={freeCart} />} />
           <Route path="/checkout" element={<CheckOut/>}/>
+          <Route path="/explore" element={<Explore />}/>
         </Routes>
     ); 
     

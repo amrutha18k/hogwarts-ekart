@@ -9,6 +9,7 @@ import '../shop.css'
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import {products} from "../data/products.js"
 import { Link } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 
 
 const categories = [
@@ -150,8 +151,12 @@ function ProductCart({text,selectedCat,addToCart}){
 }
 
 function Shop({addToCart}){
-    let [selectedCat,setSelectedCat]=useState("All");
-    let [text,setText]=useState("");
+    const location = useLocation();
+    let [selectedCat, setSelectedCat] = useState(
+        location.state?.category || "All"
+    );
+        let [text,setText]=useState("");
+    
     const [searchInput, setSearchInput] = useState("");
 
     return(

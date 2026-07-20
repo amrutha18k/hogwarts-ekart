@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 function HeroButtons(){
     return (
         <div className="hero-buttons">
-            <button className="hero-button">Explore Diagon Alley</button>
+            <Link to="/explore">
+                <button className="hero-button">Explore Diagon Alley</button>
+            </Link>
             <Link to="/shop">
                 <button className="hero-button">Shop Now</button>
             </Link>
