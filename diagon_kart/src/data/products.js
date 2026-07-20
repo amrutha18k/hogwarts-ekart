@@ -8,6 +8,16 @@ import ravDressRobes from "../assets/products/raven-dress.jpg"
 import nim2k from "../assets/products/nimbus-2000.jpg";
 import fireBolt from "../assets/products/firebolt.jpg";
 import snitch from "../assets/products/snitch.jpg";
+import elderWand from "../assets/products/elder-wand.jpg";
+import phoenixWand from "../assets/products/phoniex-wand.jpg";
+import advancedPotionBook from "../assets/products/adv-book.jpg";
+import spellBook from "../assets/products/std-book.jpg";
+import felix from "../assets/products/felix.jpg";
+import polyjuice from "../assets/products/poly.jpg";
+import hedwig from "../assets/products/hed.jpg";
+import chocolateFrog from "../assets/products/frog.jpg";
+import ears from "../assets/products/ears.jpg";
+import maraudersMap from "../assets/products/map.jpg";
 
 export const products=[
     {
@@ -100,5 +110,98 @@ export const products=[
         rating:3,
         category: ["school","travel","Quidditch","Quiditch","broom","nimbus","nimbus 2000","quidditch game","harry potter","golden","snitch"],
         longdescription:"A perfect replica of the beautiful snitch. Added with extra intricate desgin and more faster movement with a hidden compartment opening on masters touch."
+    },
+    {
+        id:11,
+        name:"Elder Wand",
+        img:elderWand,
+        price:"50000",
+        description:"The most legendary wand ever created.",
+        rating:5,
+        category:["Wands","wand","elder wand","magic","deathly hallows","harry potter"],
+        longdescription:"Crafted from elder wood with a Thestral tail hair core, the Elder Wand is known as the most powerful wand in wizarding history. A premium replica with exquisite detailing."
+    },
+    {
+        id:12,
+        name:"Phoenix Feather Wand",
+        img:phoenixWand,
+        price:"3200",
+        description:"Elegant handcrafted wand with a phoenix feather core.",
+        rating:4.8,
+        category:["Wands","wand","phoenix","magic","wizard"],
+        longdescription:"A beautifully crafted wand featuring intricate carvings and inspired by Ollivanders' finest creations. Lightweight and balanced for every aspiring wizard."
+    },
+        {
+        id:13,
+        name:"Advanced Potion Making",
+        img:advancedPotionBook,
+        price:"750",
+        description:"The essential guide for advanced potion brewing.",
+        rating:4.7,
+        category:["Spell Books","books","school","potions","study","magic"],
+        longdescription:"A detailed textbook containing advanced potion recipes, brewing techniques, and magical ingredient references used by Hogwarts students."
+    },{
+        id:14,
+        name:"Standard Book of Spells",
+        img:spellBook,
+        price:"600",
+        description:"A must-have spellbook for Hogwarts students.",
+        rating:4.4,
+        category:["Spell Books","books","magic","school","spells"],
+        longdescription:"Learn charms, hexes, and everyday magical spells with this beginner-friendly spellbook recommended for every first-year student."
+    },{
+        id:15,
+        name:"Felix Felicis",
+        img:felix,
+        price:"4500",
+        description:"Liquid Luck bottled to perfection.",
+        rating:5,
+        category:["Potions","luck","magic","felix felicis","bottle"],
+        longdescription:"A stunning decorative replica inspired by the famous Liquid Luck potion. Beautiful golden bottle perfect for collectors."
+    },{
+        id:16,
+        name:"Polyjuice Potion",
+        img:polyjuice,
+        price:"2600",
+        description:"A mysterious potion for magical transformations.",
+        rating:4.6,
+        category:["Potions","magic","polyjuice","bottle","potion"],
+        longdescription:"A premium collector's replica inspired by the famous Polyjuice Potion with a glowing bottle and handcrafted label."
+        },{
+        id:17,
+        name:"Hedwig Plush",
+        img:hedwig,
+        price:"1400",
+        description:"Soft snowy owl companion inspired by Hedwig.",
+        rating:4.9,
+        category:["Creatures","owl","hedwig","pet","plush","collectible"],
+        longdescription:"An adorable plush inspired by Harry Potter's loyal snowy owl. Perfect for collectors and fans alike."
+    },{
+        id:18,
+        name:"Chocolate Frog Box",
+        img:chocolateFrog,
+        price:"450",
+        description:"A magical chocolate treat with collectible wizard cards.",
+        rating:4.5,
+        category:["Weasley's WW","snacks","wizard","frog","collectible","chocolate"],
+        longdescription:"A beautifully designed Chocolate Frog box inspired by Honeydukes. Includes a collectible wizard card replica."
+    },{
+        id:19,
+        name:"Extendable Ears",
+        img:ears,
+        price:"700",
+        description:"Listen from afar with magical Extendable Ears.",
+        rating:4.3,
+        category:["Weasley's WW","jokes","pranks","ears","magic"],
+        longdescription:"Fred and George's famous prank invention lets you eavesdrop from impossible distances. A detailed collector replica."
+        },{
+        id:20,
+        name:"Marauder's Map",
+        img:maraudersMap,
+        price:"1800",
+        description:"I solemnly swear that I am up to no good.",
+        rating:5,
+        category:["Spell Books","map","magic","hogwarts","collectible"],
+        longdescription:"A beautifully aged replica of the Marauder's Map with intricate parchment detailing. A must-have collectible for every Harry Potter fan."
     }
 ];

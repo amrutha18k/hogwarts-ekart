@@ -130,20 +130,28 @@ function ProductCart({text,selectedCat,addToCart}){
     <>
         {filteredProducts.map((product)=>{
             return (
-                    <Link to={`/product/${product.id}`} className="product-link" key={product.id}>
-                        <div className="product-cnt" >
-                            <div className="product-img-cnt">
-                                <img src={product.img} alt={product.name} />
-                            </div>
-                            <p className="product-name">{product.name}</p>
-                            <p className="product-price">Rs.{product.price}</p>
-                            <p className="product-description">{product.description}</p>
-                            <RatingStars rating={product.rating} />
-                            <Link to="/checkout" className="product-link">
-                                <BuyButtons  product={product} addToCart={addToCart}/>
-                            </Link>
+                <div className="product-cnt" key={product.id}>
+
+                    <Link to={`/product/${product.id}`} className="product-link">
+                        <div className="product-img-cnt">
+                            <img src={product.img} alt={product.name}/>
                         </div>
+
+                        <p className="product-name">{product.name}</p>
+                        <p className="product-price">Rs.{product.price}</p>
+                        <p className="product-description">{product.description}</p>
+
+                        <RatingStars rating={product.rating}/>
                     </Link>
+
+                    <Link to="/checkout" className="nav-link">
+                        <BuyButtons
+                            product={product}
+                            addToCart={addToCart}
+                        />
+                    </Link>
+
+                </div>
             );
         })}
     </>

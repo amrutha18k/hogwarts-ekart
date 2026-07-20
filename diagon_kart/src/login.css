@@ -17,7 +17,7 @@
     align-items: center;
     flex-direction: column;
 }
-.buy-buttons{
+.login-btn{
     background-color: gold;
     color: black;
     border: none;
@@ -27,7 +27,7 @@
     font-family: "Outfit";
     transition: background-color 0.3s ease;
 }
-.buy-buttons :hover{
+.login-btn :hover{
     background-color: rgb(253, 247, 210);
 }
 .nav-link{

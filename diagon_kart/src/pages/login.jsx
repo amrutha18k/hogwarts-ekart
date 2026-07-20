@@ -15,7 +15,7 @@ export function Login(){
 
                 <h2>Diagon Kart accounts are still under construction.</h2>
                 <Link to="/explore" className="nav-link">
-                    <button className="buy-buttons">Continue Exploring</button>
+                    <button className="login-btn">Continue Exploring</button>
                 </Link>
             </div>
             <Footer/>
