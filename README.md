@@ -81,7 +81,7 @@ npm run dev
 
 Landing page featuring the magical hero section and navigation.
 
-![Home Page](./screenshots/home.png)
+![Home](./src/screenshots/home.png)
 
 ---
 
@@ -89,7 +89,7 @@ Landing page featuring the magical hero section and navigation.
 
 Browse magical products with category filtering, product search, and rating-based sorting.
 
-![Shop Page](./screenshots/shop.png)
+![Shop](./src/screenshots/shop.png)
 
 ---
 
@@ -97,7 +97,7 @@ Browse magical products with category filtering, product search, and rating-base
 
 View complete product information, ratings, descriptions, and purchase options.
 
-![Product Details](./screenshots/product.png)
+![Product Details](./src/screenshots/product.png)
 
 ---
 
@@ -105,7 +105,7 @@ View complete product information, ratings, descriptions, and purchase options.
 
 Manage cart items, update quantities, and review selected products.
 
-![Shopping Cart](./screenshots/cart.png)
+![Shopping Cart](./src/screenshots/cart.png)
 
 ---
 
@@ -113,7 +113,7 @@ Manage cart items, update quantities, and review selected products.
 
 Automatic calculation of cart totals and order summary before checkout.
 
-![Order Summary](./screenshots/order.png)
+![Order Summary](./src/screenshots/order.png)
 
 ---
 
