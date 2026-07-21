@@ -10,6 +10,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import {products} from "../data/products.js"
 import { Link } from "react-router-dom";
 import {  useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const categories = [
@@ -77,6 +78,7 @@ export function RatingStars({ rating,det=false }) {
 
 
 export function BuyButtons({ detailed = false,product,addToCart,quantity}){
+    const navigate = useNavigate();
     return(
         <div className={detailed ? "buy-buttons detailed-buy" : "buy-buttons"}>
             <button className="add-to-cart" 
@@ -87,7 +89,18 @@ export function BuyButtons({ detailed = false,product,addToCart,quantity}){
                     alert('Your item has been added to Cart. Click ok to continue')
                 }}
             >Add to Cart</button>
-            <button className="buy-now">Buy Now</button>
+            <button
+                className="buy-now"
+                onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    addToCart(product, quantity);
+                    navigate("/checkout");
+                }}
+            >
+                Buy Now
+            </button>
         </div>
     );
 }
@@ -144,12 +157,12 @@ function ProductCart({text,selectedCat,addToCart}){
                         <RatingStars rating={product.rating}/>
                     </Link>
 
-                    <Link to="/checkout" className="nav-link">
-                        <BuyButtons
-                            product={product}
-                            addToCart={addToCart}
-                        />
-                    </Link>
+                   
+                    <BuyButtons
+                        product={product}
+                        addToCart={addToCart}
+                    />
+                    
 
                 </div>
             );
